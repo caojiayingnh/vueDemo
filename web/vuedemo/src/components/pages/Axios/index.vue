@@ -1,10 +1,10 @@
 <template>
-  <div>router</div>
+
 </template>
 
 <script>
     export default {
-        name: "Router"
+        name: "index"
     }
 </script>
 

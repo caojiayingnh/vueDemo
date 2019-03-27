@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
+
 const Introduction = resolve => require(['@/components/pages/Introduction'], resolve)
-const VModel = resolve => require(['@/components/pages/VModel'], resolve)
-const AxiosDemo = resolve => require(['@/components/pages/AxiosDemo'], resolve)
-const RouterIntro = resolve => require(['@/components/pages/RouterIntro'], resolve)
+const MVVM = resolve => require(['@/components/pages/VModel/MVVM'], resolve)
+const VModelIndex = resolve => require(['@/components/pages/VModel/index'], resolve)
+const AxiosDemo = resolve => require(['@/components/pages/Axios/AxiosDemo'], resolve)
+const AxiosIndex = resolve => require(['@/components/pages/Axios/index'], resolve)
+const RouterIndex = resolve => require(['@/components/pages/Router/index'], resolve)
 const Todo = resolve => require(['@/components/pages/todo'], resolve)
 
 Vue.use(Router)
@@ -22,19 +26,29 @@ export default new Router({
       component: Introduction
     },
     {
-      path: '/vmodel',
-      name: 'vmodel',
-      component: VModel
+      path: '/mvvm',
+      name: 'mvvm',
+      component: MVVM
     },
     {
-      path: '/routerintro',
-      name: 'routerIntro',
-      component: RouterIntro
+      path: '/vmodelindex',
+      name: 'vmodelIndex',
+      component: VModelIndex
+    },
+    {
+      path: '/routerindex',
+      name: 'routerIndex',
+      component: RouterIndex
     },
     {
       path: '/axiosdemo',
       name: 'axiosDemo',
       component: AxiosDemo
+    },
+    {
+      path: '/axiosindex',
+      name: 'axiosIndex',
+      component: AxiosIndex
     },
     {
       path: '/xxx',

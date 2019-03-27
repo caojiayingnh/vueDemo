@@ -1,10 +1,10 @@
 <template>
-  <div>Axios</div>
+
 </template>
 
 <script>
     export default {
-        name: 'AxiosDemo'
+        name: "index"
     }
 </script>
 

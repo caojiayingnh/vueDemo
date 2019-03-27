@@ -20,12 +20,12 @@ export default {
 
 <style scoped>
   .console-page{
-    background: #eeeeee;
+    background: floralwhite;
     height: 100vh;
   }
   .nav-menu{
     height: 100%;
-    background-color: #666666;
+    background-color: #333333;
   }
   .container{
     height: 100%;
