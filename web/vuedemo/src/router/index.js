@@ -10,6 +10,7 @@ const AxiosDemo = resolve => require(['@/components/pages/Axios/AxiosDemo'], res
 const AxiosIndex = resolve => require(['@/components/pages/Axios/index'], resolve)
 const RouterIndex = resolve => require(['@/components/pages/Router/index'], resolve)
 const Todo = resolve => require(['@/components/pages/todo'], resolve)
+const Component = resolve => require(['@/components/pages/ComponentIntro/CompoIntro'], resolve)
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/axiosindex',
       name: 'axiosIndex',
       component: AxiosIndex
+    },
+    {
+      path: '/component',
+      name: 'component',
+      component: Component
     },
     {
       path: '/xxx',

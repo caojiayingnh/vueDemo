@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">价值一个亿的AI</div>
+    <div class="title">一个神奇的AI</div>
     <el-input v-model="input" placeholder="请输入你的问题"></el-input>
     <el-button class="btn" type="primary" @click="submit">提问</el-button>
     <el-card class="box-card">

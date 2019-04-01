@@ -12,6 +12,9 @@
          </template>
          <el-menu-item index="/intro">什么是Vue</el-menu-item>
        </el-submenu>
+      <el-menu-item index="/component">
+          <span>Vue Component</span>
+      </el-menu-item>
        <el-submenu index="/vmodelindex">
          <template slot="title">
            <span>数据绑定介绍</span>
