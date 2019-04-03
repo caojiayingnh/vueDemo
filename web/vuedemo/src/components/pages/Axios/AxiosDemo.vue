@@ -41,10 +41,23 @@
         :value="3">
       </el-option>
     </el-select>
-    <el-button class="btn" type="primary" @click="submit">查询</el-button>
+    <el-button class="btn" type="primary" @click="search">查询</el-button>
     <el-card class="box-card" shadow="never">
       <div slot="header" class="clearfix">
         <span>天气</span>
+      </div>
+      <div class="answer-box">{{weather}}</div>
+    </el-card>
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <div class="title">一个神奇的AI</div>
+    <el-input v-model="question" placeholder="请输入你的问题"></el-input>
+    <el-button class="btn" type="primary" @click="submit">提问</el-button>
+    <el-card class="box-card" shadow="never">
+      <div slot="header" class="clearfix">
+        <span>AI</span>
       </div>
       <div class="answer-box">{{answer}}</div>
     </el-card>
@@ -53,17 +66,20 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'AxiosDemo',
   data () {
     return {
       city: '',
       day: '',
+      weather: '',
+      question: '',
       answer: ''
     }
   },
   methods: {
-    submit () {
+    search () {
       var _this = this
       axios.get('http://localhost:8081/weather', {
         params: {
@@ -71,9 +87,16 @@ export default {
           day: _this.day
         }
       }).then(function (response) {
-         _this.answer = response.data
+         _this.weather = response.data
       })
-
+    },
+    submit () {
+      var _this = this
+      axios.post('http://localhost:8081/ai', {
+        question: _this.question
+      }).then(function (response) {
+        _this.answer = response.data
+      })
     }
   }
 }

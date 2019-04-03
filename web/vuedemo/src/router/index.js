@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+Vue.use(Router)
 
 
 const Introduction = resolve => require(['@/components/pages/Introduction'], resolve)
@@ -9,10 +9,9 @@ const VModelIndex = resolve => require(['@/components/pages/VModel/index'], reso
 const AxiosDemo = resolve => require(['@/components/pages/Axios/AxiosDemo'], resolve)
 const AxiosIndex = resolve => require(['@/components/pages/Axios/index'], resolve)
 const RouterIndex = resolve => require(['@/components/pages/Router/index'], resolve)
-const Todo = resolve => require(['@/components/pages/todo'], resolve)
 const Component = resolve => require(['@/components/pages/ComponentIntro/CompoIntro'], resolve)
 
-Vue.use(Router)
+
 
 export default new Router({
   routes: [
@@ -47,7 +46,7 @@ export default new Router({
       component: AxiosDemo
     },
     {
-      path: '/axiosindex',
+      path: '/axiosIndex',
       name: 'axiosIndex',
       component: AxiosIndex
     },
@@ -55,11 +54,7 @@ export default new Router({
       path: '/component',
       name: 'component',
       component: Component
-    },
-    {
-      path: '/xxx',
-      name: 'xxx',
-      component: Todo
     }
   ]
 })
+

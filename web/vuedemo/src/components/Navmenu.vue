@@ -28,7 +28,13 @@
          </template>
          <el-menu-item index="/routerindex">Router</el-menu-item>
        </el-submenu>
-       <el-menu-item index="/axiosdemo">与后端交互</el-menu-item>
+      <el-submenu index="/axiosdemo">
+        <template slot="title">
+          <span>与后端交互</span>
+        </template>
+        <el-menu-item index="/axiosIndex">Axios介绍</el-menu-item>
+        <el-menu-item index="/axiosdemo">Demo</el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>
