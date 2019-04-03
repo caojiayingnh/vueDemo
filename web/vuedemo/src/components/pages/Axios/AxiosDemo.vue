@@ -1,11 +1,50 @@
 <template>
   <div>
-    <div class="title">一个神奇的AI</div>
-    <el-input v-model="input" placeholder="请输入你的问题"></el-input>
-    <el-button class="btn" type="primary" @click="submit">提问</el-button>
-    <el-card class="box-card">
+    <div class="title">天气预报</div>
+    <el-select v-model="city" placeholder="选择城市">
+      <el-option
+        label="上海"
+        :value="0">
+      </el-option>
+      <el-option
+        label="北京"
+        :value="1">
+      </el-option>
+      <el-option
+        label="浙江"
+        :value="2">
+      </el-option>
+      <el-option
+        label="江苏"
+        :value="3">
+      </el-option>
+    </el-select>
+    <el-select v-model="day" placeholder="选择时间">
+      <el-option
+        label="周一"
+        :value="0">
+      </el-option>
+      <el-option
+        label="周二"
+        :value="1">
+      </el-option>
+      <el-option
+        label="周三"
+        :value="2">
+      </el-option>
+      <el-option
+        label="周四"
+        :value="3">
+      </el-option>
+      <el-option
+        label="周五"
+        :value="3">
+      </el-option>
+    </el-select>
+    <el-button class="btn" type="primary" @click="submit">查询</el-button>
+    <el-card class="box-card" shadow="never">
       <div slot="header" class="clearfix">
-        <span>AI</span>
+        <span>天气</span>
       </div>
       <div class="answer-box">{{answer}}</div>
     </el-card>
@@ -18,16 +57,18 @@ export default {
   name: 'AxiosDemo',
   data () {
     return {
-      input: '',
-      answer: 'my respense'
+      city: '',
+      day: '',
+      answer: ''
     }
   },
   methods: {
     submit () {
       var _this = this
-      axios.get('http://localhost:8081/ask', {
+      axios.get('http://localhost:8081/weather', {
         params: {
-          question: _this.input
+          city: _this.city,
+          day: _this.day
         }
       }).then(function (response) {
          _this.answer = response.data
