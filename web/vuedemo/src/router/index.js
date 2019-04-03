@@ -50,11 +50,17 @@ export default new Router({
       name: 'axiosIndex',
       component: AxiosIndex
     },
+           {
+           path: '/componentDemo',
+           name: 'componentDemo',
+           component: ComponentDemo
+           },
     {
       path: '/component',
       name: 'component',
       component: Component
     }
+           
   ]
 })
 
