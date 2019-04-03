@@ -11,6 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      '/weather': {
+        // 测试环境
+        target: 'http://localhost:8081', // 接口域名
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          '^/weather': '/weather' //需要rewrite重写的,
+        }
+      }
+
     },
 
     // Various Dev Server settings
