@@ -11,6 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      '/weather': {
+        // 测试环境
+        target: 'http://localhost:8081', // 接口域名
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          '^/weather': '/weather' //需要rewrite重写的,
+        }
+      }
+
     },
 
     // Various Dev Server settings
@@ -24,7 +33,7 @@ module.exports = {
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.
-    useEslint: true,
+    useEslint: false,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
