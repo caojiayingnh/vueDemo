@@ -46,18 +46,6 @@ export default {
     }
   },
   methods: {
-    // submit () {
-    //   var _this = this
-    //   axios.get('http://localhost:8081/weather', {
-    //     params: {
-    //       city: _this.city,
-    //       day: _this.day
-    //     }
-    //   }).then(function (response) {
-    //      _this.answer = response.data
-    //   })
-
-    // }
     async submit(){
       let _this=this;
       let city=_this.city;
