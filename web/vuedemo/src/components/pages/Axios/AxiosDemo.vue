@@ -62,26 +62,6 @@
       }
     },
     methods: {
-      /* search () {
-        var _this = this
-        axios.get('http://localhost:8081/weather', {
-          params: {
-            city: _this.city,
-            day: _this.day
-          }
-        }).then(function (response) {
-           _this.weather = response.data
-        })
-      },
-      submit () {
-        var _this = this
-        axios.post('http://localhost:8081/ai', {
-          question: _this.question
-        }).then(function (response) {
-          _this.answer = response.data
-        })
-        */
-
       async search() {
         let _this = this
         let city = _this.city
