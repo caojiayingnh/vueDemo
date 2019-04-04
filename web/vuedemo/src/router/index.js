@@ -10,7 +10,7 @@ const AxiosDemo = resolve => require(['@/components/pages/Axios/AxiosDemo'], res
 const AxiosIndex = resolve => require(['@/components/pages/Axios/index'], resolve)
 const RouterIndex = resolve => require(['@/components/pages/Router/index'], resolve)
 const Component = resolve => require(['@/components/pages/ComponentIntro/CompoIntro'], resolve)
-
+const ComponentDemo = resolve => require(['@/components/pages/ComponentIntro/ComDi'], resolve)
 
 
 export default new Router({
@@ -60,7 +60,7 @@ export default new Router({
       name: 'component',
       component: Component
     }
-           
+
   ]
 })
 
