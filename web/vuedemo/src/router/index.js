@@ -11,6 +11,7 @@ const AxiosIndex = resolve => require(['@/components/pages/Axios/index'], resolv
 const RouterIndex = resolve => require(['@/components/pages/Router/index'], resolve)
 const Component = resolve => require(['@/components/pages/ComponentIntro/CompoIntro'], resolve)
 const ComponentDemo = resolve => require(['@/components/pages/ComponentIntro/ComDi'], resolve)
+const ComponentSwitch = resolve => require(['@/components/pages/ComponentIntro/Switch'], resolve)
 
 
 export default new Router({
@@ -53,6 +54,11 @@ export default new Router({
       path: '/componentDemo',
       name: 'componentDemo',
       component: ComponentDemo
+    },
+    {
+      path: '/componentSwitch',
+      name: 'componentSwitch',
+      component: ComponentSwitch
     },
     {
       path: '/component',
