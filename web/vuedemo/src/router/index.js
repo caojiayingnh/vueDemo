@@ -3,7 +3,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 
-const Introduction = resolve => require(['@/components/pages/Introduction'], resolve)
+const Introduction = resolve => require(['@/components/pages/introduct/Introduction'], resolve)
 const MVVM = resolve => require(['@/components/pages/VModel/MVVM'], resolve)
 const VModelIndex = resolve => require(['@/components/pages/VModel/index'], resolve)
 const AxiosDemo = resolve => require(['@/components/pages/Axios/AxiosDemo'], resolve)
@@ -14,8 +14,7 @@ const ComponentDemo = resolve => require(['@/components/pages/ComponentIntro/Com
 
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Home',
       redirect: '/intro'
@@ -50,11 +49,11 @@ export default new Router({
       name: 'axiosIndex',
       component: AxiosIndex
     },
-           {
-           path: '/componentDemo',
-           name: 'componentDemo',
-           component: ComponentDemo
-           },
+    {
+      path: '/componentDemo',
+      name: 'componentDemo',
+      component: ComponentDemo
+    },
     {
       path: '/component',
       name: 'component',
@@ -63,4 +62,3 @@ export default new Router({
 
   ]
 })
-
