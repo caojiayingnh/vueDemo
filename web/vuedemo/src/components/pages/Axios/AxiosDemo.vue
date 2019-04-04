@@ -23,10 +23,23 @@
       <el-option label="周五" :value="3">
       </el-option>
     </el-select>
-    <el-button class="btn" type="primary" @click="submit">查询</el-button>
+    <el-button class="btn" type="primary" @click="search">查询</el-button>
     <el-card class="box-card" shadow="never">
       <div slot="header" class="clearfix">
         <span>天气</span>
+      </div>
+      <div class="answer-box">{{weather}}</div>
+    </el-card>
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <div class="title">一个神奇的AI</div>
+    <el-input v-model="question" placeholder="请输入你的问题"></el-input>
+    <el-button class="btn" type="primary" @click="submit">提问</el-button>
+    <el-card class="box-card" shadow="never">
+      <div slot="header" class="clearfix">
+        <span>AI</span>
       </div>
       <div class="answer-box">{{answer}}</div>
     </el-card>
@@ -35,35 +48,46 @@
 </template>
 
 <script>
-import AxiosDemo from '@/services/AxiosDemo.js';
-export default {
-  name: 'AxiosDemo',
-  data () {
-    return {
-      city: '',
-      day: '',
-      answer: ''
-    }
-  },
-  methods: {
-    async submit(){
-      let _this=this;
-      let city=_this.city;
-      let day=_this.day;
-      let answer=await AxiosDemo.get({city,day});
-      _this.answer = answer;
+  import AxiosDemo from '@/services/AxiosDemo.js'
+
+  export default {
+    name: 'AxiosDemo',
+    data() {
+      return {
+        city: '',
+        day: '',
+        weather: '',
+        question: '',
+        answer: ''
+      }
+    },
+    methods: {
+      async search() {
+        let _this = this
+        let city = _this.city
+        let day = _this.day
+        let weather = await AxiosDemo.getWeather({city, day})
+        _this.weather = weather
+      },
+
+      async submit() {
+        let _this = this
+        let question = _this.question
+        let answer = await AxiosDemo.getAi({question})
+        _this.answer = answer
+      }
     }
   }
-}
 </script>
 
 <style scoped>
-.btn {
-  margin: 20px 0;
-}
-.title {
-  font-size: 30px;
-  margin: 10px 0 30px 0;
-  color: #4481ff;
-}
+  .btn {
+    margin: 20px 0;
+  }
+
+  .title {
+    font-size: 30px;
+    margin: 10px 0 30px 0;
+    color: #4481ff;
+  }
 </style>

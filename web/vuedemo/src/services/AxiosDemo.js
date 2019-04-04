@@ -4,11 +4,17 @@ axios.interceptors.response.use((res) => {
 })
 export default {
   getUrl() {
-    return 'http://localhost:8081/weather'
+    return {
+      weather: 'http://localhost:8081/weather',
+      ai: 'http://localhost:8081/ai'
+    }
   },
-  async get(params) {
-    return await axios.get(this.getUrl(), {
+  async getWeather(params) {
+    return await axios.get(this.getUrl().weather, {
       params
     })
+  },
+  async getAi(params) {
+    return await axios.post(this.getUrl().ai, params)
   }
 }
