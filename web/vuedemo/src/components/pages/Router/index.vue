@@ -78,10 +78,6 @@
 </script>
 
 <style scoped>
-  .el-carousel__item {
-    background-color: #ffffff;
-  }
-
   .content {
     height: 630px;
     padding: 10px 60px;
