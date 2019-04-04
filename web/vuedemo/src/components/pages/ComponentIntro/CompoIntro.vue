@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="total">
     <div class="title">组件</div>
 
     <div class="description">组件是可复用的vue实例，组件的出现就是为了拆分vue实例的代码量，能够让我们以不同的组件，来划分不同的功能模块。将来我们要用什么功能，就可以调用相应的组件。</div>
@@ -135,6 +135,9 @@
 </script>
 
 <style scoped>
+  .total{
+    background-color: ghostwhite;
+  }
   .title {
     font-size: 30px;
     margin: 10px 0;
