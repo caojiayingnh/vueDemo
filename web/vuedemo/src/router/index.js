@@ -4,7 +4,6 @@ Vue.use(Router)
 
 
 const Introduction = resolve => require(['@/components/pages/introduct/Introduction'], resolve)
-const MVVM = resolve => require(['@/components/pages/VModel/MVVM'], resolve)
 const VModelIndex = resolve => require(['@/components/pages/VModel/index'], resolve)
 const AxiosDemo = resolve => require(['@/components/pages/Axios/AxiosDemo'], resolve)
 const AxiosIndex = resolve => require(['@/components/pages/Axios/index'], resolve)
@@ -24,11 +23,6 @@ export default new Router({
       path: '/intro',
       name: 'intro',
       component: Introduction
-    },
-    {
-      path: '/mvvm',
-      name: 'mvvm',
-      component: MVVM
     },
     {
       path: '/vmodelindex',

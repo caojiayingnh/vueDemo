@@ -19,8 +19,7 @@
         <template slot="title">
           <span>数据绑定介绍</span>
         </template>
-        <el-menu-item index="/vmodelindex">介绍</el-menu-item>
-        <el-menu-item index="/mvvm">MVVM架构</el-menu-item>
+        <el-menu-item index="/vmodelindex">数据绑定</el-menu-item>
       </el-submenu>
       <el-submenu index="/routerindex">
         <template slot="title">
